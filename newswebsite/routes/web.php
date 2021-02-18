@@ -17,17 +17,15 @@ use App\Http\Controllers;
  *路由文件    Route:: 路由方式 回调函数或者视图或者控制器
  */
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', function () {
-    echo "dssdsd'd's";
+    return view('/Pear-Admin-Layui/login');
 });
 
 Route::get('/testinsertuser',[TestController::class,'testinsertuser']);
 Route::get('/testdeleteuser',[TestController::class,'testdeleteuser']);
 Route::get('/testmodifuser',[TestController::class,'testmodifuser']);
 Route::get('/testqueryuser',[TestController::class,'testqueryuser']);
+
+Route::get('/testredisquery',[TestController::class,'testredisquery']);
 
 
 

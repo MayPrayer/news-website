@@ -1,0 +1,22 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "测试数据库增删改查",
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/testinsertuser": {
+            "get": {
+                "operationId": "App\\Http\\Controllers\\TestController::testinsertuser",
+                "responses": {
+                    "200": {
+                        "description": "测试插入一个用户"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

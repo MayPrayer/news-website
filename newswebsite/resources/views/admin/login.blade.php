@@ -18,10 +18,10 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <input placeholder="账 户 :  " hover class="layui-input"  name="username"/>
+        <input placeholder="账 户 :  " hover class="layui-input"  name="username" id="username" />
     </div>
     <div class="layui-form-item">
-        <input placeholder="密 码 :  " hover class="layui-input" name="password" />
+        <input placeholder="密 码 :  " hover class="layui-input" name="password" id="password"/>
     </div>
     <div class="layui-form-item">
         <input placeholder="验证码 : "  hover class="code layui-input layui-input-inline" name="vifcode" />
@@ -39,34 +39,6 @@
 <!-- 资 源 引 入 -->
 <script src="component/layui/layui.js"></script>
 <script src="component/pear/pear.js"></script>
-<script>
-    layui.use(['form', 'element', 'jquery', 'button', 'popup'], function() {
-        var form = layui.form;
-        var element = layui.element;
-        var button = layui.button;
-        var popup = layui.popup;
-        var $ = layui.jquery;
-
-        // 登 录 提 交
-        form.on('submit(login)', function() {
-            var username =  $("[name='username']");.val();
-            var password = $("[name='password']");.val();
-            alert(password);
-            button.load({
-                elem: '.login',
-                time: 1500,
-                done: function() {
-                    popup.success("登录成功", function() {
-                        location.href = "index"
-                    });
-                }
-            })
-
-
-
-            return false;
-        });
-    })
-</script>
+<script src="require/js/login.js"></script>
 </body>
 </html>

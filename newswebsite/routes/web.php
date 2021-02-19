@@ -16,15 +16,23 @@ use App\Http\Controllers;
 /**
  *路由文件    Route:: 路由方式 回调函数或者视图或者控制器  数组会自动转成json
  */
+
+/**后台管理登录页面**/
 Route::get('/', function () {
-    return view('login');
+    return view('admin/login');
 });
+/**后台跳转页面*/
 Route::get('/index', function () {
-    return view('index');
+    return view('admin/index');
 });
+
+/**验证**/
+Route::post('/vifuser', ['\App\Http\Controllers\UserController\UserController','test']);
 
 Route::get('/users',['\App\Http\Controllers\UserController\UserController','test']);
 
+
+/****/
 Route::get('/testinsertuser',[TestController::class,'testinsertuser']);
 Route::get('/testdeleteuser',[TestController::class,'testdeleteuser']);
 Route::get('/testmodifuser',[TestController::class,'testmodifuser']);

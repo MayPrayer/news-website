@@ -14,11 +14,16 @@ use App\Http\Controllers;
 |
 */
 /**
- *路由文件    Route:: 路由方式 回调函数或者视图或者控制器
+ *路由文件    Route:: 路由方式 回调函数或者视图或者控制器  数组会自动转成json
  */
 Route::get('/', function () {
-    return view('/Pear-Admin-Layui/login');
+    return view('login');
 });
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/users',['\App\Http\Controllers\UserController\UserController','test']);
 
 Route::get('/testinsertuser',[TestController::class,'testinsertuser']);
 Route::get('/testdeleteuser',[TestController::class,'testdeleteuser']);
@@ -26,6 +31,24 @@ Route::get('/testmodifuser',[TestController::class,'testmodifuser']);
 Route::get('/testqueryuser',[TestController::class,'testqueryuser']);
 
 Route::get('/testredisquery',[TestController::class,'testredisquery']);
+
+Route::get('/test1',function (){
+    $id = request("id");//?后的参数
+});
+
+Route::get('/test2',function (){
+    return redirect();
+});
+
+Route::get('/test2/{id}',function ($id){  //获取 url 中的参数
+    return redirect();
+});
+
+Route::get('/test',function (){
+    $id = request("id");
+
+    return view('wecome',['id'=>$id]);
+});
 
 
 

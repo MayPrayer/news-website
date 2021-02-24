@@ -27,7 +27,7 @@ Route::get('/index', function () {
 });
 
 /**验证**/
-Route::post('/vifuser', ['\App\Http\Controllers\UserController\UserController','test']);
+Route::post('/vifuser', ['\App\Http\Controllers\LoginController','vifuser']);
 
 Route::get('/users',['\App\Http\Controllers\UserController\UserController','test']);
 

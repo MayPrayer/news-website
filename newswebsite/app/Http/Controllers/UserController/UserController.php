@@ -10,6 +10,6 @@ class UserController extends Controller
 {
     //
     public function  test(){
-        return DB::table('nw_users')->get();
+        return DB::table('nw_users')->where('username',username)->get();
     }
 }
